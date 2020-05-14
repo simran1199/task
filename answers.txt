@@ -1,0 +1,23 @@
+answer 1: 
+
+Callback hell happens when we write nested callbacks i.e we write callbacks inside callbacks inside callbacks and so on and our javascript code becomes very difficult to read and debug. Callback functions  are mot often used when we have to wait for something to happen in js like asynchronous functions where some external activity must complete before a result can be processed and to handle the erorrs. 
+We can avoid callback hell by various ways in which few of them are:
+•	Using modularization to reduce the complexity of our code by making our modules in separate file and then exporting them to the main file by using module.exports. Or we can also use the technique of declaring our functions beforehand of using them as the callbacks later in the code this will also reduce the complexity.
+•	We can also use an easy method in which we can include several comments and give our callback functions different names that can make our code readable and understandable.
+•	We can use promises  which is an object to avoid callback hell. In promise we pass a function having two parameters resolve and reject , inside its body we perform asynchronous actions and when they are complete we call resolve and reject to know if the promise has succeeded  or failed respectively. Then we can use a promise using then() and catch() , if a promise calls resolve then we use then  and if in case promise fails or calls reject then we use catch , so in both then and catch we pass the respective functions for both the cases i.e we basically use then to get the result and catch to catch an erorr. Most importantly Promise is chainable.
+•	We can use async/await also which mainly is a new way of writing promises that are based on asynchronous code but make asynchronous code look and behave more like synchronous code. 
+
+
+answer 2:
+
+•	An arrow function is mainly used when we do not want to mainipulate the “this” keyword within our function as they are incapable of redefining the value of this within their function body and the value of “this” keyword inside an arrow function remains the same throughout  the function and is always equa; to the value of this in the closest normal parent function.
+•	 And one major difference between arrow function and normal functions is that  normal functions are both callable and constructable so they can be called using the new keyword whereas arrow functions are only callable not constructable , here we cant call arrow functions using new keyword. 
+•	The arrow functions are also concise and require lesser amount of code than required in regular functions.
+•	Arrow functions can also never have duplicate parameters in both either strict or non-strict mode whereas in normal functions in non-strict mode we can pass duplicate parameters.
+
+
+
+answer 3:
+
+Here we have declared the variable i outside the body of function so its scope isn’t inside the function. When we run the same code in web browsers like chrome then as the scope of I variable is outside the functions scope so it’s scope becomes global and it follows the properties of a window’s object.Hence when we run our code in chrome it takes time for the browser to take out the properties of i variable within the heavily populated window namespace each and every time the for loop runs. Whereas when we run the same code in nodejs the scope of I variable is still not inside the function but its scope is inside the module’s own scope which  takes very less time to detect the i variable  very easily.
+
